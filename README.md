@@ -13,14 +13,21 @@ This project scrapes Amazon Best Sellers data from the Kitchen & Dining category
 ---
 
 # Methodology
-- Scraping: Built a custom Octoparse task (rather than a paywalled template) targeting Amazon's Best Sellers page for Kitchen & Dining. Configured auto-detected fields for title, price, star rating, review count, and product rank, with pagination enabled to capture multiple pages.
+### Scraping: 
+Built a custom Octoparse task (rather than a paywalled template) targeting Amazon's Best Sellers page for Kitchen & Dining. Configured auto-detected fields for title, price, star rating, review count, and product rank, with pagination enabled to capture multiple pages.
 
-- Data Cleaning: The raw export contained duplicate field sets from repeated auto-detect passes (e.g. Title and Title1 columns). Resolved by identifying which column in each pair held valid data, dropping the empty duplicate, and renaming to clean labels. Converted Stars and Price from text (e.g. "4.7 out of 5 stars", "NGN 38,629.84") into numeric types for analysis.
-Removed 39 exact-duplicate rows (likely caused by scraper pagination overlap) and one incomplete row, leaving 67 clean records.
-
-- Exploratory Data Analysis: Examined distributions and computed a correlation matrix across Price, Stars, and Review_Count.
+### Data Cleaning: 
+- The raw export contained duplicate field sets from repeated auto-detect passes (e.g. Title and Title1 columns).
+- Resolved by identifying which column in each pair held valid data, dropping the empty duplicate, and renaming to clean labels.
+- Converted Stars and Price from text (e.g. "4.7 out of 5 stars", "NGN 38,629.84") into numeric types for analysis.
+- Removed 39 exact-duplicate rows (likely caused by scraper pagination overlap) and one incomplete row, leaving 67 clean records.
   
-- Visualization: Built a price distribution histogram, a Price vs. Review Count regression scatterplot, and a star rating boxplot.
+### Exploratory Data Analysis: 
+Examined distributions and computed a correlation matrix across Price, Stars, and Review_Count.
+
+### Visualization: 
+Built a price distribution histogram, a Price vs. Review Count regression scatterplot, and a star rating boxplot.
+
 ---
 
 # Business Questions & Key Findings
